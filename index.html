@@ -19,6 +19,32 @@
         .btn-primary:hover { background: #3b4aec; box-shadow: 0 7px 20px rgba(59,78,236,0.55); }
         .btn-secondary { background: transparent; border: 2px solid #5066f0; color: #5066f0; }
         .btn-secondary:hover { background: #5066f0; color: #fff; }
+        .logo-img {
+  max-width: 180px;
+  width: 80vw;
+  border-radius: 24px;
+  box-shadow: 0 8px 40px #000a, 0 0 36px #6dfcff55;
+  transition: box-shadow 0.4s, transform 0.3s;
+  background: #080e24;
+  margin-bottom: 26px;
+}
+
+/* Pulse animation */
+@keyframes logo-pulse {
+  0%, 100% { box-shadow: 0 8px 40px #000a, 0 0 24px #6dfcff30; }
+  50% { box-shadow: 0 14px 60px #00ffeebb, 0 0 50px #00e6ffd5; }
+}
+
+.logo-img {
+  animation: logo-pulse 4s ease-in-out infinite;
+}
+
+/* Hover shine effect */
+.logo-img:hover {
+  box-shadow: 0 12px 60px #33ffd9bb, 0 0 36px #a3f8eecc;
+  transform: scale(1.05);
+}
+
     </style>
 </head>
 <body>
@@ -26,7 +52,8 @@
     <section id="hero">
 <section id="hero">
   <div style="margin-bottom:26px;">
-    <img src="image-53.png" alt="Metalink Social Logo" style="max-width:180px; width:80vw; border-radius:18px; box-shadow:0 8px 40px #0008;">
+    <img src="image-53.png" alt="Metalink Social Logo" class="logo-img">
+      
   </div>
         <h1>Metalink Social</h1>
         <p>Your Universal NFT-Powered Social Identity. Decentralized platform to own, connect, and control all your social handles through one unique user code.</p>
