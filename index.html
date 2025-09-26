@@ -1,133 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Metalink Social</title>
-  <style>
-    /* Reset & base */
-    body, html {
-      margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b1120; color: #e0e6f1;
-      scroll-behavior: smooth;
-    }
-    a {
-      text-decoration: none; color: #5066f0; transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #a0baff;
-    }
-    .container {
-      max-width: 1200px; margin: 0 auto; padding: 0 20px;
-    }
-    /* Hero Section */
-    #hero {
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      height: 100vh; background: linear-gradient(135deg, #1a254f 0%, #5066f0 100%);
-      text-align: center; padding: 40px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    #hero h1 {
-      font-size: 3rem; margin-bottom: 0.5rem;
-      font-weight: 900; letter-spacing: 0.05em;
-      color: #e0e6f1;
-    }
-    #hero p {
-      font-size: 1.3rem; max-width: 600px; margin: 0 auto 1.5rem;
-      color: #cfd9ffdd;
-    }
-    .btn-primary, .btn-secondary {
-      font-weight: 700; font-size: 1.1rem; padding: 15px 30px; border-radius: 30px; cursor: pointer; border: none;
-      margin: 0 10px; transition: background-color 0.3s ease, color 0.3s ease;
-      display: inline-block;
-    }
-    .btn-primary {
-      background-color: #5066f0; color: white;
-      box-shadow: 0 5px 15px rgba(80,102,240,0.5);
-    }
-    .btn-primary:hover {
-      background-color: #3b4ecc;
-      box-shadow: 0 7px 20px rgba(59,78,204,0.7);
-    }
-    .btn-secondary {
-      background-color: transparent; border: 2px solid #5066f0; color: #5066f0;
-    }
-    .btn-secondary:hover {
-      background-color: #5066f0; color: white;
-    }
-    /* About Section */
-    #about {
-      background: #0b1120; padding: 80px 20px;
-    }
-    #about .content {
-      max-width: 900px; margin: 0 auto; text-align: center;
-    }
-    #about h2 {
-      font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: #e0e6f1;
-    }
-    #about p {
-      font-size: 1.15rem; line-height: 1.6; color: #b8c6ffcc;
-    }
-    #about .icons {
-      display: flex; justify-content: center; gap: 50px; margin-top: 3rem; flex-wrap: wrap;
-    }
-    .icon-item {
-      flex: 1 1 150px; max-width: 150px; display: flex; flex-direction: column; align-items: center;
-      color: #7791f0;
-    }
-    .icon-item svg {
-      width: 60px; height: 60px; margin-bottom: 15px; fill: #5066f0;
-    }
-    .icon-item span {
-      font-weight: 600; font-size: 1rem;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      #hero h1 { font-size: 2.3rem; }
-      #hero p { font-size: 1rem; }
-      #about h2 { font-size: 2rem; }
-      #about p { font-size: 1rem;}
-      #about .icons {
-        gap: 30px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metalink Social</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #090b1c; color: #e0e6f1; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        a { text-decoration: none; color: #5066f0; transition: color 0.2s ease; }
+        a:hover { color: #a0baff; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        section { margin: 0 0 36px 0; border-radius: 22px; overflow: hidden; }
+        #hero { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 78vh; background: linear-gradient(135deg, #1a254f, #131944 70%); text-align: center; padding: 54px 16px 36px 16px; }
+        #hero h1 { font-size: 2.8rem; margin-bottom: .7rem; font-weight: 800; letter-spacing: .05em; color: #e0e6f1; }
+        #hero p { font-size: 1.15rem; max-width: 560px; margin: 0 auto 2rem auto; color: #c9dffd; }
+        .btn-primary, .btn-secondary { font-weight: 700; font-size: 1.1rem; padding: 15px 30px; border-radius: 22px; border: none; margin: 0 10px; transition: all 0.3s; display: inline-block; }
+        .btn-primary { background: #5066f0; color: #fff; box-shadow: 0 5px 15px rgba(80,102,240,.45); }
+        .btn-primary:hover { background: #3b4aec; box-shadow: 0 7px 20px rgba(59,78,236,0.55); }
+        .btn-secondary { background: transparent; border: 2px solid #5066f0; color: #5066f0; }
+        .btn-secondary:hover { background: #5066f0; color: #fff; }
+    </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section id="hero" role="banner">
-    <h1>Metalink Social</h1>
-    <p>Your Universal NFT-Powered Social Identity. Decentralized platform to own, connect, and control all your social handles through one unique user code.</p>
-    <div>
-      <button class="btn-primary" onclick="alert('Get Your User Code coming soon!')">Get Your User Code</button>
-      <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Explore White Paper</button>
-    </div>
-    <!-- Optional animated background shapes or svg can be added here -->
-  </section>
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Metalink Social</h1>
+        <p>Your Universal NFT-Powered Social Identity. Decentralized platform to own, connect, and control all your social handles through one unique user code.</p>
+        <div>
+            <button class="btn-primary" onclick="alert('Get Your User Code coming soon!')">Get Your User Code</button>
+            <button class="btn-secondary" onclick="document.getElementById('whitepaper').scrollIntoView({behavior:'smooth'})">Explore White Paper</button>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" role="region" aria-label="About Metalink Social">
-    <div class="content">
-      <h2>Redefining Social Networks with Blockchain and NFTs</h2>
-      <p>Metalink Social empowers users with true ownership of their digital identity and social content through a unique universal user code backed by blockchain and NFTs. We enable seamless, trusted social connections beyond traditional platforms and restore privacy, control, and fair monetization to the individual.</p>
-      <div class="icons" aria-label="Key features">
-        <div class="icon-item" tabindex="0" aria-describedby="desc-ownership">
-          <svg viewBox="0 0 24 24"><path d="M12 2C9.243 2 7 4.243 7 7c0 1 1 4 1 4H6c-1.1 0-1.99.9-1.99 2S4.9 15 6 15h2c.13 0 .25.03.36.08L12 20l3.64-4.92c.11-.05.23-.08.36-.08h2c1.1 0 2-.9 2-2s-.9-2-2-2h-2s1-3 1-4c0-2.757-2.243-5-5-5z"/></svg>
-          <span>User Ownership</span>
-          <p id="desc-ownership" style="display:none;">Users fully own their data and content.</p>
-        </div>
-        <div class="icon-item" tabindex="0" aria-describedby="desc-privacy">
-          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4V5a2 2 0 0 0-4 0v3a2 2 0 0 0 0 4zm-6 7c0-3.31 2.69-6 6-6 2.17 0 4.04 1.31 5 3.17V19a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1z"/></svg>
-          <span>Privacy First</span>
-          <p id="desc-privacy" style="display:none;">Granular blockchain-based privacy controls.</p>
-        </div>
-        <div class="icon-item" tabindex="0" aria-describedby="desc-decentralization">
-          <svg viewBox="0 0 24 24"><path d="M4 13v-2h16v2H4zm2-6v4h12V7H6zM6 17v4h12v-4H6z"/></svg>
-          <span>Decentralized</span>
-          <p id="desc-decentralization" style="display:none;">Censorship-resistant social experiences.</p>
-        </div>
+    <!-- White Paper Sections -->
+    <section id="whitepaper" style="background:#131944; padding:44px 0; border-radius: 24px;">
+        <div class="container">
+        <h2 style="font-size:1.9rem; color:#8eaaff; font-weight:700; margin-bottom:1.2em;">White Paper</h2>
+        <!-- Executive Summary -->
+        <h3 style="color:#b8c6ff; margin-top:28px;">Executive Summary</h3>
+        <p style="margin-bottom:1.5em;">Metalink Social is a decentralized, NFT-driven social platform where users control their digital identity, privacy, and content. Our universal blockchain code links all social presences while protecting user data, promoting ownership and innovation in the digital age.</p>
+        <!-- Introduction -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">Introduction</h3>
+        <p style="margin-bottom:1.5em;">Web2 social networks limit user privacy and monetize content without fair rewards. Metalink Social’s Web3-first design enables verifiable ownership, cross-platform connection, and a new model for digital social freedom.</p>
+        <!-- The Problem -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">The Problem</h3>
+        <p style="margin-bottom:1.5em;">Centralized platforms hold all user data and restrict identity transferability, stifling innovation, privacy, and fair monetization. True ownership remains out of reach for most users today.</p>
+        <!-- Vision and Mission -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">Vision & Mission</h3>
+        <p style="margin-bottom:1.5em;">To empower every person with a secure digital identity, under user control, unlocking Web3 monetization, privacy, and true cross-network connection.</p>
+        <!-- Core Technology -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">Core Technology</h3>
+        <p style="margin-bottom:1.5em;">Every user receives a unique NFT-based code stored on blockchain—linking and verifying all connected platforms, with cryptographic proof of identity, and protected by decentralized storage and end-to-end encryption.</p>
+        <!-- Key Features -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">Key Features</h3>
+        <ul style="margin-bottom:1.8em; padding-left:20px;">
+          <li>Universal, blockchain-backed user code</li>
+          <li>User-owned, portable digital identity</li>
+          <li>Decentralized privacy and access control</li>
+          <li>Monetization for creators and users</li>
+          <li>Interoperability across Web3 & social networks</li>
+        </ul>
+        <!-- Roadmap -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">Roadmap</h3>
+        <p style="margin-bottom:1.5em;">2025 - Beta launch<br>2026 - NFT identity rollout<br>2027 - Universal code social integrations, monetization for creators, DAO governance.</p>
+        <!-- Team (placeholder) -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">Team</h3>
+        <p style="margin-bottom:1.5em;">Our diverse team brings expertise in blockchain, cybersecurity, social UX, and digital rights—committed to building user-first platforms for the future.</p>
+        <!-- Conclusion -->
+        <h3 style="color:#b8c6ff; margin-top:32px;">Conclusion</h3>
+        <p>Metalink Social is more than another network—it is the foundation for the next phase of social connection, privacy, and ownership.</p>
       </div>
-    </div>
-  </section>
+    </section>
 </body>
 </html>
