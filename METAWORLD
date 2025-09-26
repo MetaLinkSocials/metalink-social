@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metalink Social</title>
+  <style>
+    /* Reset & base */
+    body, html {
+      margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b1120; color: #e0e6f1;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none; color: #5066f0; transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #a0baff;
+    }
+    .container {
+      max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    }
+    /* Hero Section */
+    #hero {
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      height: 100vh; background: linear-gradient(135deg, #1a254f 0%, #5066f0 100%);
+      text-align: center; padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero h1 {
+      font-size: 3rem; margin-bottom: 0.5rem;
+      font-weight: 900; letter-spacing: 0.05em;
+      color: #e0e6f1;
+    }
+    #hero p {
+      font-size: 1.3rem; max-width: 600px; margin: 0 auto 1.5rem;
+      color: #cfd9ffdd;
+    }
+    .btn-primary, .btn-secondary {
+      font-weight: 700; font-size: 1.1rem; padding: 15px 30px; border-radius: 30px; cursor: pointer; border: none;
+      margin: 0 10px; transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+    .btn-primary {
+      background-color: #5066f0; color: white;
+      box-shadow: 0 5px 15px rgba(80,102,240,0.5);
+    }
+    .btn-primary:hover {
+      background-color: #3b4ecc;
+      box-shadow: 0 7px 20px rgba(59,78,204,0.7);
+    }
+    .btn-secondary {
+      background-color: transparent; border: 2px solid #5066f0; color: #5066f0;
+    }
+    .btn-secondary:hover {
+      background-color: #5066f0; color: white;
+    }
+    /* About Section */
+    #about {
+      background: #0b1120; padding: 80px 20px;
+    }
+    #about .content {
+      max-width: 900px; margin: 0 auto; text-align: center;
+    }
+    #about h2 {
+      font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: #e0e6f1;
+    }
+    #about p {
+      font-size: 1.15rem; line-height: 1.6; color: #b8c6ffcc;
+    }
+    #about .icons {
+      display: flex; justify-content: center; gap: 50px; margin-top: 3rem; flex-wrap: wrap;
+    }
+    .icon-item {
+      flex: 1 1 150px; max-width: 150px; display: flex; flex-direction: column; align-items: center;
+      color: #7791f0;
+    }
+    .icon-item svg {
+      width: 60px; height: 60px; margin-bottom: 15px; fill: #5066f0;
+    }
+    .icon-item span {
+      font-weight: 600; font-size: 1rem;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      #hero h1 { font-size: 2.3rem; }
+      #hero p { font-size: 1rem; }
+      #about h2 { font-size: 2rem; }
+      #about p { font-size: 1rem;}
+      #about .icons {
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section id="hero" role="banner">
+    <h1>Metalink Social</h1>
+    <p>Your Universal NFT-Powered Social Identity. Decentralized platform to own, connect, and control all your social handles through one unique user code.</p>
+    <div>
+      <button class="btn-primary" onclick="alert('Get Your User Code coming soon!')">Get Your User Code</button>
+      <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Explore White Paper</button>
+    </div>
+    <!-- Optional animated background shapes or svg can be added here -->
+  </section>
+
+  <!-- About Section -->
+  <section id="about" role="region" aria-label="About Metalink Social">
+    <div class="content">
+      <h2>Redefining Social Networks with Blockchain and NFTs</h2>
+      <p>Metalink Social empowers users with true ownership of their digital identity and social content through a unique universal user code backed by blockchain and NFTs. We enable seamless, trusted social connections beyond traditional platforms and restore privacy, control, and fair monetization to the individual.</p>
+      <div class="icons" aria-label="Key features">
+        <div class="icon-item" tabindex="0" aria-describedby="desc-ownership">
+          <svg viewBox="0 0 24 24"><path d="M12 2C9.243 2 7 4.243 7 7c0 1 1 4 1 4H6c-1.1 0-1.99.9-1.99 2S4.9 15 6 15h2c.13 0 .25.03.36.08L12 20l3.64-4.92c.11-.05.23-.08.36-.08h2c1.1 0 2-.9 2-2s-.9-2-2-2h-2s1-3 1-4c0-2.757-2.243-5-5-5z"/></svg>
+          <span>User Ownership</span>
+          <p id="desc-ownership" style="display:none;">Users fully own their data and content.</p>
+        </div>
+        <div class="icon-item" tabindex="0" aria-describedby="desc-privacy">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4V5a2 2 0 0 0-4 0v3a2 2 0 0 0 0 4zm-6 7c0-3.31 2.69-6 6-6 2.17 0 4.04 1.31 5 3.17V19a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1z"/></svg>
+          <span>Privacy First</span>
+          <p id="desc-privacy" style="display:none;">Granular blockchain-based privacy controls.</p>
+        </div>
+        <div class="icon-item" tabindex="0" aria-describedby="desc-decentralization">
+          <svg viewBox="0 0 24 24"><path d="M4 13v-2h16v2H4zm2-6v4h12V7H6zM6 17v4h12v-4H6z"/></svg>
+          <span>Decentralized</span>
+          <p id="desc-decentralization" style="display:none;">Censorship-resistant social experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
